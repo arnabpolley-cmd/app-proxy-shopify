@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     console.log("Shopify Signature:", signature);
 
     if (hash !== signature) {
-        console.error("Signature Mismatch!");
+        console.error("Signature Mismatch!",hash,signature);
         return res.status(401).json({ 
             error: "Invalid Signature",
             received: signature,
